@@ -3,13 +3,11 @@ package com.epam.rd.autotasks;
 import java.util.Arrays;
 
 public class DecrementingCarousel {
-    int capacity;
     static int[] elements;
-    int size = 0;
+    int size;
     boolean called;
 
     public DecrementingCarousel(int capacity) {
-        this.capacity = capacity;
         elements = new int[capacity];
     }
 

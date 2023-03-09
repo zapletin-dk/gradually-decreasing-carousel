@@ -2,13 +2,10 @@ package com.epam.rd.autotasks;
 
 public class GraduallyDecreasingCarouselRun extends CarouselRun {
     int decrement = 1;
-
     @Override
     public int next() {
         int beforeDecreasing;
-        if (isFinished())
-            return -1;
-        else {
+        if (!isFinished()) {
             beforeDecreasing = array[position];
             array[position] -= decrement;
             do {
@@ -18,7 +15,8 @@ public class GraduallyDecreasingCarouselRun extends CarouselRun {
                     position = 0;
                 }
             } while ((array[position] <= 0) && !isFinished());
-        }
+        } else { return -1; }
+
         return beforeDecreasing;
     }
 }
